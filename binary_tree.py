@@ -50,8 +50,7 @@ class BinaryTree(object):
                 return True
 
         if right_nodes:
-            right_nodes.reverse()
-            for right_node in right_nodes:
+            for right_node in reversed(right_nodes):
                 if self.preorder_search(right_node, find_val):
                     return True
 
@@ -73,8 +72,7 @@ class BinaryTree(object):
             node = node.left
             traversal = '-'.join((traversal, str(node)))
         if right_nodes:
-            right_nodes.reverse()
-            for right_node in right_nodes:
+            for right_node in reversed(right_nodes):
                 traversal = '-'.join((traversal, self.preorder_print(right_node, traversal)))
         return traversal
 
